@@ -1,0 +1,19 @@
+KYC POLICY - Standard Operating Procedure v2.1
+Updated: January 2025
+
+1. CUSTOMER IDENTIFICATION
+All new customers must provide valid government-issued photo ID.
+Accepted documents: Aadhaar Card, PAN Card, Passport, Voter ID.
+
+2. ADDRESS VERIFICATION
+Proof of address must be submitted within 30 days of account opening.
+Accepted: Utility bill, Bank statement, Rental agreement (not older than 3 months).
+
+3. EXCEPTION HANDLING
+If a customer cannot provide standard KYC documents, escalate to the Branch Manager.
+The Branch Manager may approve alternative documentation on a case-by-case basis.
+Document the exception in the CRM with reason code EXC-KYC-01.
+
+4. RENEWAL
+KYC must be renewed every 5 years for regular customers.
+High-risk customers require annual KYC renewal.
