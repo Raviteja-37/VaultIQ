@@ -6,6 +6,7 @@ import ChatPage from './pages/ChatPage';
 import AuditPage from './pages/AuditPage';
 import AlertsPage from './pages/AlertsPage';
 import TicketsPage from './pages/TicketsPage';
+import AdminPage from './pages/AdminPage';
 
 export default function App() {
   return (
@@ -13,7 +14,6 @@ export default function App() {
       <BrowserRouter>
         <Routes>
           <Route path="/login" element={<LoginPage />} />
-
           <Route
             path="/chat"
             element={
@@ -22,7 +22,6 @@ export default function App() {
               </ProtectedRoute>
             }
           />
-
           <Route
             path="/audit"
             element={
@@ -33,7 +32,6 @@ export default function App() {
               </ProtectedRoute>
             }
           />
-
           <Route
             path="/alerts"
             element={
@@ -42,7 +40,6 @@ export default function App() {
               </ProtectedRoute>
             }
           />
-
           <Route
             path="/tickets"
             element={
@@ -51,7 +48,14 @@ export default function App() {
               </ProtectedRoute>
             }
           />
-
+          <Route
+            path="/admin"
+            element={
+              <ProtectedRoute roles={['admin']}>
+                <AdminPage />
+              </ProtectedRoute>
+            }
+          />
           <Route path="/" element={<Navigate to="/chat" replace />} />
           <Route path="*" element={<Navigate to="/chat" replace />} />
         </Routes>

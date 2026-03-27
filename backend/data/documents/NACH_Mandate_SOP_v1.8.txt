@@ -1,0 +1,31 @@
+NACH MANDATE PROCESSING — SOP v1.8
+Department: Operations | Updated: February 2025
+
+1. WHAT IS NACH
+National Automated Clearing House (NACH) is an electronic payment system
+for recurring transactions like loan EMIs, insurance premiums, SIPs.
+
+2. MANDATE REGISTRATION
+Customer submits physical mandate form or e-mandate via net banking.
+Verification: Bank verifies signature against records within 3 working days.
+Activation: NPCI activates mandate within 10 working days of submission.
+
+3. MANDATE FAILURE REASONS
+Technical failure: System downtime at customer bank.
+Insufficient funds: Balance below EMI amount on due date.
+Account closed: Customer account no longer active.
+Signature mismatch: Physical mandate rejected by destination bank.
+Mandate expired: Mandate validity period has elapsed.
+
+4. EXCEPTION HANDLING FOR MANDATE FAILURE
+Step 1: System auto-retries after 24 hours (once).
+Step 2: If retry fails, ops team notified via system alert.
+Step 3: Customer notified via SMS and email within 2 hours.
+Step 4: Ops executive contacts customer within 1 business day.
+Step 5: If no response in 3 days, escalate to Collections team.
+Reason code for CRM: EXC-NACH-01 (technical), EXC-NACH-02 (insufficient funds).
+
+5. MANDATE CANCELLATION
+Customer request: Process within 2 working days.
+Bank-initiated: Only for account closure or court order.
+Notify NPCI within 1 business day of cancellation.

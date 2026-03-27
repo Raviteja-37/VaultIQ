@@ -1,0 +1,34 @@
+CUSTOMER GRIEVANCE REDRESSAL — SOP v2.0
+Department: Customer Service | Updated: November 2024
+
+1. GRIEVANCE CHANNELS
+Branch: Customer submits written complaint at branch.
+Phone: Call center logs complaint, issues reference number.
+Email: complaints@bank.com — acknowledged within 4 hours.
+Online: Website grievance portal — auto-acknowledged instantly.
+Regulator: RBI Banking Ombudsman for escalated complaints.
+
+2. TAT (TURNAROUND TIME) STANDARDS
+Account-related: 3 working days.
+Transaction disputes: 7 working days.
+Loan complaints: 10 working days.
+Fraud complaints: 24 hours for blocking, 7 days for resolution.
+All others: 14 working days maximum.
+
+3. COMPLAINT CATEGORIES
+L1 (Frontline): Simple queries, balance disputes — branch resolves.
+L2 (Operations): Transaction errors, failed payments — ops team resolves.
+L3 (Management): Unresolved L2, policy complaints — branch manager resolves.
+L4 (Regulator): Unresolved within 30 days — RBI Ombudsman.
+
+4. FRAUD COMPLAINT HANDLING
+Immediate: Block card/account within 30 minutes of complaint.
+Register FIR: Customer advised to file police complaint.
+Investigation: Fraud team investigates within 3 days.
+Provisional credit: For debit card fraud, provisional credit within 10 days.
+Zero liability: If fraud reported within 3 days of occurrence.
+
+5. COMPENSATION POLICY
+Delays beyond TAT: Rs. 100 per day compensation to customer.
+Wrongful charges: Full refund + 10% additional as goodwill.
+Service failure: As per RBI compensation framework.

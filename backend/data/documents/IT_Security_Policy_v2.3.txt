@@ -1,0 +1,39 @@
+IT SECURITY POLICY — v2.3
+Department: IT & Cybersecurity | Updated: January 2025
+
+1. PASSWORD POLICY
+Minimum length: 12 characters.
+Complexity: Uppercase, lowercase, number, special character required.
+Expiry: Every 90 days.
+Reuse: Last 10 passwords cannot be reused.
+Failed attempts: Account locked after 5 failed attempts.
+
+2. DATA CLASSIFICATION
+Public: Marketing materials, published annual reports.
+Internal: Operational documents, SOPs, policies.
+Confidential: Customer data, financial data, audit reports.
+Restricted: Board minutes, M&A information, salary data.
+
+3. ACCESS CONTROL
+Principle of least privilege: Staff get minimum access needed for job.
+Access review: Quarterly review of all system access.
+Privileged access: Dual approval required for admin-level access.
+Remote access: VPN mandatory for all remote work.
+
+4. INCIDENT RESPONSE
+Detection to containment: Within 1 hour.
+Notify CISO: Within 2 hours of confirmed incident.
+Customer notification: Within 72 hours if customer data compromised.
+RBI reporting: Within 6 hours for critical cybersecurity incidents.
+
+5. ACCEPTABLE USE
+Bank systems for official use only.
+No unauthorized software installation.
+USB devices prohibited on bank workstations.
+Personal email on bank systems strictly prohibited.
+
+6. DATA BACKUP
+Critical systems: Real-time replication.
+All systems: Daily backup, weekly offsite backup.
+Recovery time objective (RTO): 4 hours for critical systems.
+Recovery point objective (RPO): 1 hour for critical systems.

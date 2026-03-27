@@ -6,6 +6,7 @@ from app.rag.router import router as chat_router
 from app.audit.router import router as audit_router
 from app.alerts.router import router as alerts_router
 from app.tickets.router import router as tickets_router
+from app.ingestion.router import router as docs_router
 
 app = FastAPI(title="VaultIQ API", version="1.0.0")
 
@@ -26,6 +27,7 @@ app.include_router(chat_router)
 app.include_router(audit_router)
 app.include_router(alerts_router)
 app.include_router(tickets_router)
+app.include_router(docs_router)
 
 @app.get("/")
 def root():

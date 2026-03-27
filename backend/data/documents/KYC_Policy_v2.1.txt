@@ -1,0 +1,35 @@
+KYC POLICY — Standard Operating Procedure v2.1
+Department: Compliance | Updated: January 2025
+
+1. CUSTOMER IDENTIFICATION
+All new customers must provide valid government-issued photo ID.
+Accepted: Aadhaar Card, PAN Card, Passport, Voter ID, Driving License.
+Foreign nationals: Passport + Visa copy mandatory.
+
+2. ADDRESS VERIFICATION
+Proof of address required within 30 days of account opening.
+Accepted: Utility bill, Bank statement, Rental agreement (not older than 3 months).
+Digital copies accepted if attested by a gazetted officer.
+
+3. RISK CATEGORIZATION
+Low Risk: Salaried individuals, government employees.
+Medium Risk: Self-employed, small business owners.
+High Risk: PEPs (Politically Exposed Persons), foreign nationals, cash-heavy businesses.
+
+4. EXCEPTION HANDLING
+If customer cannot provide standard KYC documents:
+- Escalate to Branch Manager immediately.
+- Branch Manager may approve alternative docs on case-by-case basis.
+- Log exception in CRM with reason code EXC-KYC-01.
+- Report to Compliance team within 24 hours.
+
+5. KYC RENEWAL
+Regular customers: Every 5 years.
+Medium risk customers: Every 3 years.
+High risk customers: Annually.
+Failure to renew: Account flagged, transactions restricted after 30-day notice.
+
+6. DIGITAL KYC (VIDEO KYC)
+Permitted for savings accounts below Rs. 2 lakhs.
+Customer must appear live on video with original documents.
+Agent must record session and store for 5 years.

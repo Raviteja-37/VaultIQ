@@ -1,0 +1,36 @@
+ANTI-MONEY LAUNDERING POLICY — v4.0
+Department: Compliance | Updated: January 2025
+
+1. OVERVIEW
+The bank is committed to full compliance with the Prevention of Money
+Laundering Act (PMLA) 2002 and RBI AML guidelines. All staff must complete
+AML training annually.
+
+2. SUSPICIOUS TRANSACTION INDICATORS
+Large cash transactions above Rs. 10 lakhs.
+Multiple transactions just below reporting threshold (structuring).
+Sudden increase in account activity inconsistent with customer profile.
+Transactions with high-risk countries (FATF blacklist).
+Frequent international wire transfers to unknown beneficiaries.
+
+3. TRANSACTION MONITORING
+System auto-flags transactions above Rs. 10 lakhs for CTR filing.
+Suspicious transactions flagged by system or staff — STR filing required.
+CTR filing: Within 7 days of transaction.
+STR filing: Within 7 days of suspicion being established.
+Reports filed with FIU-IND (Financial Intelligence Unit — India).
+
+4. CUSTOMER DUE DILIGENCE (CDD)
+Standard CDD: All customers at onboarding.
+Enhanced CDD: PEPs, high-risk countries, unusual transaction patterns.
+Simplified CDD: Low-risk products (basic savings below Rs. 50,000).
+
+5. RECORD KEEPING
+All KYC records: Minimum 5 years after account closure.
+Transaction records: Minimum 5 years from date of transaction.
+STR/CTR copies: Minimum 10 years.
+
+6. STAFF RESPONSIBILITIES
+All staff must report suspicious activity to Compliance Officer immediately.
+Tipping off customers about AML investigation strictly prohibited.
+Violation of AML policy: Disciplinary action up to termination.

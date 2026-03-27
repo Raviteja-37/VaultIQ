@@ -1,0 +1,36 @@
+RETAIL LOAN PROCESSING — SOP v3.2
+Department: Loans | Updated: December 2024
+
+1. LOAN APPLICATION INTAKE
+Accepted channels: Branch, website, mobile app, DSA (Direct Sales Agent).
+Required documents: KYC docs, income proof, 6-month bank statement, ITR (2 years).
+Property loans: Additional property documents, valuation report required.
+
+2. CREDIT ASSESSMENT
+Bureau check: CIBIL score minimum 700 for personal loans, 650 for home loans.
+Income assessment: EMI/NMI ratio must not exceed 50%.
+Employment verification: Minimum 2 years employment for salaried, 3 years for self-employed.
+
+3. LOAN APPROVAL MATRIX
+Up to Rs. 5 lakhs: Branch Manager approval.
+Rs. 5–25 lakhs: Regional Credit Manager approval.
+Rs. 25 lakhs–1 crore: Credit Committee approval.
+Above Rs. 1 crore: Executive Credit Committee + Board approval.
+
+4. LOAN DISBURSEMENT
+Approval to disbursement: Maximum 7 working days for personal loans.
+Home loans: Maximum 15 working days after property verification.
+Disbursement only to borrower's own account — no third party.
+
+5. RESTRUCTURING REQUESTS
+Eligible after: Minimum 12 EMIs paid.
+Reasons accepted: Job loss, medical emergency, natural disaster.
+Customer submits: Written request + supporting documents.
+Processing time: 15 working days.
+Approval authority: Credit restructuring committee.
+
+6. NPA (NON-PERFORMING ASSET) CLASSIFICATION
+Special Mention Account (SMA-0): Overdue 1-30 days.
+SMA-1: Overdue 31-60 days — relationship manager to contact customer.
+SMA-2: Overdue 61-90 days — escalate to collections.
+NPA: Overdue 90+ days — legal team notified.
