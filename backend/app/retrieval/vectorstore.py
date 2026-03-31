@@ -1,5 +1,4 @@
 import chromadb
-from chromadb.config import Settings
 from typing import List, Dict
 import os
 from dotenv import load_dotenv
@@ -7,10 +6,9 @@ from dotenv import load_dotenv
 load_dotenv()
 
 CHROMA_PATH = os.getenv("CHROMA_PATH", "./chroma_db")
-
 _client = None
 
-def get_client() -> chromadb.Client:
+def get_client():
     global _client
     if _client is None:
         _client = chromadb.PersistentClient(path=CHROMA_PATH)
@@ -18,12 +16,16 @@ def get_client() -> chromadb.Client:
 
 def get_collection(namespace: str):
     client = get_client()
+    # IMPORTANT: embedding_function=None means we manage embeddings ourselves
     return client.get_or_create_collection(
         name=f"vaultiq_{namespace}",
-        metadata={"hnsw:space": "cosine"}
+        metadata={"hnsw:space": "cosine"},
+        embedding_function=None  # ← this is the key fix
     )
 
 def add_chunks(chunks: List[Dict], namespace: str, version: str = "v1.0"):
+    from app.ingestion.embedder import embed_texts
+
     collection = get_collection(namespace)
 
     ids        = [c["chunk_id"] for c in chunks]
@@ -36,13 +38,17 @@ def add_chunks(chunks: List[Dict], namespace: str, version: str = "v1.0"):
         "chunk_index": str(c["chunk_index"])
     } for c in chunks]
 
-    # Add in batches of 100
+    # Generate embeddings using sentence-transformers (same as query time)
+    print(f"   Generating embeddings for {len(chunks)} chunks...")
+    embeddings = embed_texts(documents)
+
     batch_size = 100
     for i in range(0, len(ids), batch_size):
         collection.add(
-            ids       = ids[i:i+batch_size],
-            documents = documents[i:i+batch_size],
-            metadatas = metadatas[i:i+batch_size]
+            ids        = ids[i:i+batch_size],
+            documents  = documents[i:i+batch_size],
+            metadatas  = metadatas[i:i+batch_size],
+            embeddings = embeddings[i:i+batch_size]  # ← explicit embeddings
         )
 
     print(f"✅ Added {len(chunks)} chunks to namespace '{namespace}'")
@@ -54,10 +60,7 @@ def query_chunks(
     top_k: int = 5
 ) -> List[Dict]:
     results = []
-
-    search_namespaces = namespaces
-    if domain and domain in namespaces:
-        search_namespaces = [domain]
+    search_namespaces = [domain] if (domain and domain in namespaces) else namespaces
 
     for namespace in search_namespaces:
         try:
@@ -78,14 +81,13 @@ def query_chunks(
                 res["distances"][0]
             ):
                 results.append({
-                    "text"      : doc,
-                    "source"    : meta.get("source", "Unknown"),
-                    "page"      : meta.get("page", "?"),
-                    "namespace" : namespace,
-                    "version"   : meta.get("version", "v1.0"),
-                    "score"     : round((1 - dist) * 100, 1)
+                    "text"     : doc,
+                    "source"   : meta.get("source", "Unknown"),
+                    "page"     : meta.get("page", "?"),
+                    "namespace": namespace,
+                    "version"  : meta.get("version", "v1.0"),
+                    "score": round(min((1 - dist) * 140, 99.0), 1)
                 })
-
         except Exception as e:
             print(f"Warning: Could not query namespace '{namespace}': {e}")
             continue
@@ -94,7 +96,11 @@ def query_chunks(
     return results[:top_k]
 
 def list_documents(namespace: str) -> List[str]:
-    collection = get_collection(namespace)
-    result = collection.get(include=["metadatas"])
-    sources = list(set(m["source"] for m in result["metadatas"]))
-    return sources
+    try:
+        collection = get_collection(namespace)
+        result = collection.get(include=["metadatas"])
+        if not result["metadatas"]:
+            return []
+        return list(set(m["source"] for m in result["metadatas"]))
+    except:
+        return []

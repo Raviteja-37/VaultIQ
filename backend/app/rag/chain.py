@@ -12,7 +12,7 @@ load_dotenv()
 
 client = Groq(api_key=os.getenv("GROQ_API_KEY"))
 
-LOW_CONFIDENCE_THRESHOLD = 50.0
+LOW_CONFIDENCE_THRESHOLD = 25.0
 
 def run_rag(
     query: str,
