@@ -1,5 +1,5 @@
 from sqlalchemy.orm import Session
-from app.models.database import SecurityAlert, User, RoleEnum
+from app.models.database import SecurityAlert
 from app.models.schemas import TokenData
 from datetime import datetime
 import uuid
@@ -23,10 +23,7 @@ def fire_security_alert(
     )
     db.add(alert)
     db.commit()
-
-    print(f"🚨 SECURITY ALERT: {user.email} [{user.role}] tried to access restricted info")
+    print(f"🚨 ALERT SAVED: {user.email} tried to access restricted info")
     print(f"   Query: '{query}'")
     print(f"   Keywords: {restricted_keywords}")
-    print(f"   Dept: {user.department}")
-
     return alert

@@ -8,7 +8,6 @@ from typing import List
 
 security = HTTPBearer()
 
-# Namespace permissions — which roles can access which document domains
 ROLE_NAMESPACES = {
     RoleEnum.customer:   ["public"],
     RoleEnum.ops_staff:  ["public", "sop", "hr"],
@@ -18,11 +17,17 @@ ROLE_NAMESPACES = {
     RoleEnum.executive:  ["public", "sop", "hr", "compliance", "regulatory", "internal", "executive"],
 }
 
-# Restricted keywords — if detected in query, triggers security alert
+# Expanded keyword list — catches more natural language variations
 RESTRICTED_KEYWORDS = [
-    "shareholder", "equity", "ownership", "board", "acquisition",
-    "merger", "salary", "payroll", "confidential", "classified",
-    "ceo", "cfo", "executive compensation", "stock option"
+    "shareholder", "shareholders", "share holder", "share holders",
+    "equity", "equities", "ownership", "owner", "owners",
+    "board", "board of directors", "director", "directors",
+    "acquisition", "merger", "mergers", "buyout",
+    "salary", "salaries", "payroll", "compensation",
+    "classified", "top secret", "confidential",
+    "ceo salary", "cfo salary", "executive compensation",
+    "stock option", "stock options", "shares", "dividends",
+    "profit sharing", "net worth", "valuation",
 ]
 
 def get_current_user(
@@ -44,7 +49,6 @@ def get_current_user(
             status_code=status.HTTP_401_UNAUTHORIZED,
             detail="User not found or inactive"
         )
-
     return token_data
 
 def require_roles(allowed_roles: List[RoleEnum]):
@@ -61,5 +65,9 @@ def get_user_namespaces(role: RoleEnum) -> List[str]:
     return ROLE_NAMESPACES.get(role, ["public"])
 
 def check_restricted_query(query: str) -> List[str]:
-    query_lower = query.lower()
-    return [kw for kw in RESTRICTED_KEYWORDS if kw in query_lower]
+    query_lower = query.lower().strip()
+    hits = []
+    for kw in RESTRICTED_KEYWORDS:
+        if kw in query_lower:
+            hits.append(kw)
+    return hits
